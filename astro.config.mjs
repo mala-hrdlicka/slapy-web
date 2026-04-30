@@ -8,7 +8,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   site: 'https://slapy-hrdlicka.cz',
 
-  output: 'static',
+  output: 'server',
   adapter: netlify({
     // 🆕 KRITICKÉ: vypnout Netlify Image CDN
     imageCDN: false,
