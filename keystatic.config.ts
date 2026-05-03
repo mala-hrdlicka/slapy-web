@@ -4,8 +4,8 @@ export default config({
   storage: {
     kind: 'github',
     repo: {
-      owner: 'venclicektom-arch',
-      name: 'mala-hrdlicka-web',
+      owner: 'mala-hrdlicka',
+      name: 'slapy-web',
     },
   },
 
