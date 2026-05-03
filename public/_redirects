@@ -1,16 +1,24 @@
+# --- KONKRÉTNÍ STARÉ CESTY (OPRAVY 404) ---
+/ubytovani/menu/list/*    /ubytovani            301
+/rezervace/page/*         /kontakt              301
+/pesi-turistika/page/*    /aktivity             301
+/vylety/menu/list/*       /aktivity             301
+/cenik/page/4             /kontakt#rezervace    301
+
 # --- SEKCE S KOTVOU ---
-/apartmany/gallery*    /galerie#apartmany    301
-/chaty/gallery*        /galerie#chatky       301
-/areal/gallery*        /galerie#areal        301
+/apartmany/gallery*       /galerie#apartmany    301
+/chaty/gallery*           /galerie#chatky       301
+/chatky/gallery*          /galerie#chatky       301
+/areal/gallery*           /galerie#areal        301
 
 # --- STRÁNKY 1:1 ---
-/sportovni-vyziti      /aktivity             301
-/vylety                /aktivity             301
+/sportovni-vyziti         /aktivity             301
+/vylety                   /aktivity             301
 
-# --- CENÍK ---
-/cenik*                /cenik                301
+# --- CENÍK (Hromadné přesměrování podstránek) ---
+/cenik/*                  /cenik                301
 
 # --- CHYTÁNÍ GALLERY KDEKOLI ---
-/gallery*              /galerie              301
-/*/gallery*            /galerie              301
-/*/*/gallery*          /galerie              301
+/gallery*                 /galerie              301
+/*/gallery*               /galerie              301
+/*/*/gallery*             /galerie              301
