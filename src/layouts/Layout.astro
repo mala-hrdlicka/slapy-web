@@ -148,7 +148,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
       </div>
 
       <!-- MOBILE / TABLET MENU — vyjede pod hlavičkou na šířkách < 1024px -->
-      <div id="mobile-menu" aria-hidden="true" class="lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-[#4F7942] border-t border-white/10 shadow-2xl z-40" style="max-height: 0px;">
+      <div id="mobile-menu" aria-hidden="true" inert class="lg:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-[#4F7942] border-t border-white/10 shadow-2xl z-40" style="max-height: 0px;">
         <nav aria-label="Mobilní navigace" class="flex flex-col px-6 py-2 divide-y divide-white/10 max-w-3xl mx-auto">
           <a href="/" class="py-4 text-[13px] uppercase tracking-widest font-bold text-white hover:text-[#C5A059]">Úvod</a>
           <a href="/o-nas" class="py-4 text-[13px] uppercase tracking-widest font-bold text-white hover:text-[#C5A059]">O areálu</a>
@@ -180,6 +180,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
         const closeMenu = () => {
           menu.style.maxHeight = '0px';
           menu.setAttribute('aria-hidden', 'true');
+          menu.setAttribute('inert', ''); // 🆕
           btn.setAttribute('aria-expanded', 'false');
           btn.setAttribute('aria-label', 'Otevřít navigaci');
           menuIcon.classList.remove('hidden');
@@ -189,6 +190,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
         const openMenu = () => {
           menu.style.maxHeight = menu.scrollHeight + 'px';
           menu.setAttribute('aria-hidden', 'false');
+          menu.removeAttribute('inert'); // 🆕
           btn.setAttribute('aria-expanded', 'true');
           btn.setAttribute('aria-label', 'Zavřít navigaci');
           menuIcon.classList.add('hidden');
@@ -281,7 +283,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
 
         <!-- Sloupec 2: Rychlé odkazy — opravena třída group -->
         <div>
-          <h4 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Rychlé odkazy</h4>
+          <h2 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Rychlé odkazy</h2>
           <ul class="space-y-3 text-[13px] font-medium">
             {
               [
@@ -306,7 +308,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
 
         <!-- Sloupec 3: Kontakt -->
         <div>
-          <h4 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Kontakt</h4>
+          <h2 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Kontakt</h2>
           <ul class="space-y-4 text-[13px]">
             <li class="flex items-start gap-3">
               <svg class="w-5 h-5 text-[#C5A059] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -328,7 +330,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
 
         <!-- Sloupec 4: Check-in / Check-out -->
         <div>
-          <h4 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Informace k pobytu</h4>
+          <h2 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Informace k pobytu</h2>
           <div class="space-y-4 text-[13px]">
             <div class="bg-white/10 p-4 border border-white/20 shadow-sm">
               <p class="text-[#C5A059] text-[10px] uppercase tracking-widest font-bold mb-1">Check-in</p>

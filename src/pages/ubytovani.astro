@@ -77,7 +77,8 @@ const chatkyGalerie = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 lg:mb-16 border-b border-[#1B4332]/10 pb-6">
         <div>
-          <span class="text-[#C5A059] text-[11px] font-bold tracking-[0.3em] uppercase block mb-2">Možnost ubytování č. 1</span>
+          <span class="text-[#8B6914] text-[11px] font-bold tracking-[0.3em] uppercase block mb-2">Možnost ubytování č. 1</span>
+
           <h2 class="text-4xl md:text-5xl font-black text-[#1B4332] tracking-tight uppercase">Apartmány</h2>
         </div>
         <p class="text-[#5C6656] text-sm md:text-base font-light max-w-sm">Zděná budova, celoroční komfort a dokonalé zázemí pro rodiny.</p>
@@ -91,7 +92,7 @@ const chatkyGalerie = [
           <div class="w-full relative z-20 flex flex-col gap-8 sm:gap-12">
             <div class="w-[85%] sm:w-[80%] md:w-[75%] lg:w-[85%] xl:w-[75%] aspect-[4/3] md:aspect-[3/2] bg-white p-3 sm:p-4 shadow-2xl transition-transform duration-500 mx-auto">
               <div class="w-full h-full relative overflow-hidden group cursor-pointer bg-[#DEDACF]">
-                <Image src={aptHlavni} alt="Hlavní budova apartmánů" width={570} height={762} format="avif" quality={50} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src={aptHlavni} alt="Hlavní budova apartmánů" width={570} height={762} format="avif" quality={50} loading="eager" fetchpriority="high" decoding="sync" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div class="absolute bottom-3 left-3 bg-white/90 px-3 py-1 text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-[#4F7942] z-10">Hlavní budova</div>
               </div>
             </div>
@@ -116,7 +117,7 @@ const chatkyGalerie = [
         <div class="lg:col-span-6 flex flex-col justify-center">
           <h3 class="text-3xl md:text-5xl font-bold text-[#1B4332] mb-6 leading-tight">
             Komfortní ubytování <br />
-            <span class="text-[#C5A059]">s vlastní terasou</span>
+            <span class="text-[#8B6914]">s vlastní terasou</span>
           </h3>
 
           <div class="space-y-4 text-[#3A4535] font-light leading-relaxed text-[17px] mb-10">
@@ -140,7 +141,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Až pro 6 osob</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Až pro 6 osob</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">4 lůžka + 2 přistýlky</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Přistýlky formou rozkládací sedačky v obývacím pokoji.</p>
                 </div>
@@ -151,7 +152,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Soukromí a relax</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Soukromí a relax</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Vlastní vstup na terasu</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Uvnitř navíc najdete televizor a pohodlný jídelní kout.</p>
                 </div>
@@ -162,7 +163,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Sociální zařízení</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Sociální zařízení</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Vlastní WC a sprcha</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Plné soukromí a dostatek úložných prostor pro vaše věci.</p>
                 </div>
@@ -173,7 +174,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Vaření</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Vaření</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Vybavená kuchyňská linka</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Lednice s mrazákem, el. vařič a varná konvice.</p>
                 </div>
@@ -228,7 +229,7 @@ const chatkyGalerie = [
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 lg:mb-16 border-b border-[#1B4332]/10 pb-6">
         <div>
-          <span class="text-[#C5A059] text-[11px] font-bold tracking-[0.3em] uppercase block mb-2">Možnost ubytování č. 2</span>
+          <span class="text-[#8B6914] text-[11px] font-bold tracking-[0.3em] uppercase block mb-2">Možnost ubytování č. 2</span>
           <h2 class="text-4xl md:text-5xl font-black text-[#1B4332] tracking-tight uppercase">Dřevěné chaty</h2>
         </div>
         <p class="text-[#5C6656] text-sm md:text-base font-light max-w-sm">Klasická letní pohoda s vlastní verandou a krbovými kamny pro útulné večery.</p>
@@ -239,7 +240,7 @@ const chatkyGalerie = [
         <div class="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1">
           <h3 class="text-3xl md:text-5xl font-bold text-[#1B4332] mb-6 leading-tight">
             Pohodová dovolená <br />
-            <span class="text-[#C5A059]">s vůní dřeva</span>
+            <span class="text-[#8B6914]">s vůní dřeva</span>
           </h3>
 
           <div class="space-y-4 text-[#3A4535] font-light leading-relaxed text-[17px] mb-10">
@@ -256,7 +257,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Až pro 5 osob</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Až pro 5 osob</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Obytná kuchyně + Ložnice</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Dvě lůžka v kuchyni, tři lůžka v ložnici (vč. palandy).</p>
                 </div>
@@ -266,7 +267,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Odpočinek</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Odpočinek</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Veranda s posezením</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Ideální místo pro ranní kávu nebo večerní relax.</p>
                 </div>
@@ -276,7 +277,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Příjemné teplo</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Příjemné teplo</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Kamna na tuhá paliva</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Dodají vašemu pobytu kouzlo i v chladnějších letních dnech.</p>
                 </div>
@@ -286,7 +287,7 @@ const chatkyGalerie = [
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
                 </div>
                 <div>
-                  <p class="text-[10px] uppercase font-bold text-[#C5A059] tracking-wider mb-1">Hygiena</p>
+                  <p class="text-[10px] uppercase font-bold text-[#8B6914] tracking-wider mb-1">Hygiena</p>
                   <p class="text-[#1B4332] font-bold text-sm mb-1">Vlastní uzamykatelné WC</p>
                   <p class="text-[#5C6656] text-xs leading-snug">Umístěno cca 20 m ve zděné budově spolu s umývárnami.</p>
                 </div>

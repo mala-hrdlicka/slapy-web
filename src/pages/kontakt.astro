@@ -196,31 +196,29 @@ import Layout from '../layouts/Layout.astro';
   const successMessage = document.getElementById('formSuccess');
 
   if (form) {
-    form.addEventListener('submit', (event) => {
-      // Zabráníme klasickému odeslání (které by načetlo novou stránku)
-      event.preventDefault();
-
-      // Posbíráme data z formuláře
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       const formData = new FormData(form);
 
-      // Odešleme je na pozadí do Netlify
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        // Převedeme data do formátu, kterému Netlify rozumí
-        body: new URLSearchParams(formData as any).toString(),
-      })
-        .then(() => {
-          // Pokud se to povedlo: skryjeme formulář a ukážeme zprávu
-          form.classList.add('hidden');
-          if (successMessage) {
-            successMessage.classList.remove('hidden');
-          }
-        })
-        .catch((error) => {
-          alert('Jejda, něco se pokazilo. Zkuste to prosím znovu.');
-          console.error(error);
+      // Převedeme FormData na řetězec, který Netlify vyžaduje
+      const params = new URLSearchParams(formData as any).toString();
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params,
         });
+
+        if (response.ok) {
+          form.classList.add('hidden');
+          successMessage?.classList.remove('hidden');
+        } else {
+          throw new Error('Chyba serveru');
+        }
+      } catch (error) {
+        alert('Chyba při odesílání. Zkuste to prosím znovu.');
+      }
     });
   }
 </script>

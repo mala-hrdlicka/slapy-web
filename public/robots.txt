@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /keystatic
+Disallow: /api/keystatic
+
+Sitemap: https://www.slapy-hrdlicka.cz/sitemap-index.xml
