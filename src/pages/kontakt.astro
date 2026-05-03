@@ -56,7 +56,12 @@ import Layout from '../layouts/Layout.astro';
             <div class="bg-white p-8 md:p-12 rounded-sm border border-[#1B4332]/10 shadow-xl shadow-[#1B4332]/5">
               <h3 class="text-2xl font-bold text-[#1B4332] uppercase mb-8 border-b border-[#EFEBE0] pb-4">Předběžná objednávka</h3>
 
-              <form name="rezervace" method="POST" data-netlify="true" class="space-y-6">
+              <div id="formSuccess" class="hidden text-center p-8 bg-[#F8F7F2] border border-[#C5A059]/30 rounded-sm">
+                <h3 class="text-xl font-bold text-[#1B4332] mb-2">Děkujeme za rezervaci!</h3>
+                <p class="text-[#5C6656]">Vaše zpráva byla úspěšně odeslána. Brzy se Vám ozveme.</p>
+              </div>
+
+              <form id="rezervaceForm" name="rezervace" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
                 <input type="hidden" name="form-name" value="rezervace" />
 
                 <div class="grid sm:grid-cols-2 gap-6">
@@ -185,3 +190,37 @@ import Layout from '../layouts/Layout.astro';
     </section>
   </main>
 </Layout>
+
+<script>
+  const form = document.getElementById('rezervaceForm') as HTMLFormElement;
+  const successMessage = document.getElementById('formSuccess');
+
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      // Zabráníme klasickému odeslání (které by načetlo novou stránku)
+      event.preventDefault();
+
+      // Posbíráme data z formuláře
+      const formData = new FormData(form);
+
+      // Odešleme je na pozadí do Netlify
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        // Převedeme data do formátu, kterému Netlify rozumí
+        body: new URLSearchParams(formData as any).toString(),
+      })
+        .then(() => {
+          // Pokud se to povedlo: skryjeme formulář a ukážeme zprávu
+          form.classList.add('hidden');
+          if (successMessage) {
+            successMessage.classList.remove('hidden');
+          }
+        })
+        .catch((error) => {
+          alert('Jejda, něco se pokazilo. Zkuste to prosím znovu.');
+          console.error(error);
+        });
+    });
+  }
+</script>
