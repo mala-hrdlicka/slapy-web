@@ -1,0 +1,50 @@
+---
+// src/components/CookieBanner.astro
+---
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#f8f6f0] border-t border-[#C5A059]/30 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] p-4 md:p-6 z-50 hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-sm text-[#5C6656] text-center md:text-left">
+      <p>
+        <strong>Respektujeme vaše soukromí.</strong> K analýze návštěvnosti a vylepšování našeho webu používáme soubory cookies. Kliknutím na „Souhlasím“ nám pomůžete web dále zlepšovat.
+      </p>
+    </div>
+    <div class="flex gap-3 shrink-0">
+      <button id="cookie-decline" class="px-5 py-2.5 text-sm font-medium text-[#1B4332] bg-white border border-[#1B4332]/20 hover:bg-gray-50 transition-colors"> Odmítnout </button>
+      <button id="cookie-accept" class="px-5 py-2.5 text-sm font-medium text-white bg-[#1B4332] hover:bg-[#1B4332]/90 transition-colors"> Souhlasím </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  // TypeScript bude spokojený, protože kód spustíme, jen když nic není null
+  if (banner && acceptBtn && declineBtn) {
+    const consent = localStorage.getItem('cookieConsent');
+
+    if (!consent) {
+      banner.classList.remove('hidden');
+    } else if (consent === 'granted') {
+      loadGoogleAnalytics();
+    }
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'granted');
+      banner.classList.add('hidden');
+      loadGoogleAnalytics();
+    });
+
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'denied');
+      banner.classList.add('hidden');
+    });
+  }
+
+  function loadGoogleAnalytics() {
+    console.log('Analytics aktivováno');
+    // Sem pak přijde ten Google kód...
+  }
+</script>
