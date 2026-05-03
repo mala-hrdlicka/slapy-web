@@ -1,0 +1,37 @@
+name: Build and Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main # Spustí se při každém pushi (i z Keystaticu) do hlavní větve
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Stáhnout kód z GitHubu
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Nastavit Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # Používáme stejnou verzi jako na Netlify
+          cache: 'npm'
+
+      # 3. Nainstalovat závislosti
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Buildnout Astro projekt
+      - name: Build project
+        run: npm run build
+
+      # 5. Deploy na Netlify pomocí CLI
+      - name: Deploy to Netlify
+        run: npx netlify-cli deploy --dir=dist --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
