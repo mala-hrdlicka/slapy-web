@@ -281,7 +281,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
           </div>
         </div>
 
-        <!-- Sloupec 2: Rychlé odkazy — opravena třída group -->
+        <!-- Sloupec 2: Rychlé odkazy -->
         <div>
           <h2 class="text-[#C5A059] text-[10px] uppercase tracking-[0.2em] font-bold mb-6 drop-shadow-sm">Rychlé odkazy</h2>
           <ul class="space-y-3 text-[13px] font-medium">
@@ -348,15 +348,23 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://slapy-hrdlicka.cz');
         </div>
       </div>
 
-      <!-- Spodní lišta -->
-      <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-[11px] uppercase tracking-widest text-[#EFEBE0]/60">
+      <!-- Spodní lišta (Copyright a Licence) -->
+      <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+        <p class="text-[11px] uppercase tracking-widest text-[#EFEBE0]/60 text-center md:text-left">
           © {new Date().getFullYear()} Apartmány Malá Hrdlička
         </p>
+
         <!-- Atribuce fotek — povinné kvůli licenci -->
         <p class="text-[10px] text-[#EFEBE0]/40 text-center md:text-right leading-relaxed">
           Foto: Jan Fidler (<a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener" class="hover:text-[#EFEBE0]/70 transition underline">CC BY 2.0</a>) · Zámek Konopiště: Ввласенко (<a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener" class="hover:text-[#EFEBE0]/70 transition underline">CC BY-SA 3.0</a>) /
           <a href="https://commons.wikimedia.org" target="_blank" rel="noopener" class="hover:text-[#EFEBE0]/70 transition underline">Wikimedia Commons</a>
+        </p>
+      </div>
+
+      <!-- Podpis autora webu (Vycentrovaný úplně dole) -->
+      <div class="text-center pb-2">
+        <p class="text-[11px] text-[#EFEBE0]/60">
+          Made with <span class="text-red-500">❤️</span> by <a href="https://tomasvenclicek.cz" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-[#C5A059] transition-colors tracking-widest underline decoration-white/20 hover:decoration-[#C5A059]">TOMASVENCLICEK.CZ</a>
         </p>
       </div>
     </footer>
